@@ -23,6 +23,8 @@ class Gtkx < Formula
   end
 
   def install
+    inreplace 'gtk/Makefile.in', '-DGTK_LIBDIR=\"$(libdir)\"',
+        "-DGTK_LIBDIR=\\\"#{HOMEBREW_PREFIX}/lib\\\""
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--disable-glibtest",

@@ -22,11 +22,4 @@ class GtkEngines < Formula
     ENV['GTK_PATH'] = "#{HOMEBREW_PREFIX}/lib/gtk-2.0"
     system "#{HOMEBREW_PREFIX}/bin/gtk-demo"
   end
-
-  def caveats; <<-EOS.undent
-    You will need to set:
-      GTK_PATH=#{HOMEBREW_PREFIX}/lib/gtk-2.0
-    as by default GTK looks for modules in Cellar.
-    EOS
-  end
 end
